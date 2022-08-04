@@ -1,0 +1,38 @@
+import React from 'react';
+import styled from 'styled-components';
+
+class Footer extends React.Component {
+  render() {
+    return (
+      <FooterWrap>
+        <A href="https://github.com/DenzelGranadoz" target="_blank">
+          Made by: Denzel Granadoz
+        </A>
+        <Span>:</Span>
+        <A href="https://github.com/DenzelGranadoz/cv-project" target="_blank">
+          Click me for Source Code
+        </A>
+      </FooterWrap>
+    );
+  }
+}
+
+const FooterWrap = styled.footer`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+`;
+
+const A = styled.a`
+  color: black;
+  text-decoration: none;
+`;
+
+const Span = styled.span`
+  padding: 0 2rem;
+`;
+
+export default Footer;
