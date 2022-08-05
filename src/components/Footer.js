@@ -18,21 +18,25 @@ class Footer extends React.Component {
 }
 
 const FooterWrap = styled.footer`
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2rem;
   text-align: center;
+  padding: 0.5rem 0;
+  font-family: sans-serif;
 `;
 
 const A = styled.a`
-  color: black;
+  color: #e98074;
+
   text-decoration: none;
 `;
 
 const Span = styled.span`
+  color: #e98074;
   padding: 0 2rem;
+  font-weight: bold;
 `;
 
 export default Footer;

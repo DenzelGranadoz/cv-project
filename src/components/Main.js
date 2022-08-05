@@ -43,6 +43,7 @@ class Main extends React.Component {
           handleChange={this.handleChangePersonal}
           handleSubmit={this.handleSubmit}
         />
+
         <Preview personal={this.state.personal} />
       </MainWrap>
     );
@@ -52,6 +53,7 @@ class Main extends React.Component {
 const MainWrap = styled.main`
   display: flex;
   margin: 3rem;
+  height: 80vh;
 `;
 
 export default Main;
