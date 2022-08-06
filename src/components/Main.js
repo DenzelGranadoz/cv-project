@@ -15,6 +15,20 @@ class Main extends React.Component {
         emailAddress: '',
         description: '',
       },
+      experience: {
+        position: '',
+        companyName: '',
+        cityName: '',
+        from: '',
+        to: '',
+      },
+      education: {
+        universityName: '',
+        cityName: '',
+        degree: '',
+        from: '',
+        to: '',
+      },
     };
     this.handleChangePersonal = this.handleChangePersonal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,6 +44,26 @@ class Main extends React.Component {
     });
   };
 
+  handleChangeExperience = (key) => (e) => {
+    let newExperience = {
+      ...this.state.experience,
+      [key]: e.target.value,
+    };
+    this.setState({
+      experience: newExperience,
+    });
+  };
+
+  handleChangeEducation = (key) => (e) => {
+    let newEducation = {
+      ...this.state.education,
+      [key]: e.target.value,
+    };
+    this.setState({
+      education: newEducation,
+    });
+  };
+
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state.personal);
@@ -39,12 +73,17 @@ class Main extends React.Component {
     return (
       <MainWrap>
         <Forms
-          input={this.state.personal}
-          handleChange={this.handleChangePersonal}
+          inputPersonal={this.state.personal}
+          handleChangePersonal={this.handleChangePersonal}
           handleSubmit={this.handleSubmit}
+          handleChangeExperience={this.handleChangeExperience}
+          handleChangeEducation={this.handleChangeEducation}
         />
-
-        <Preview personal={this.state.personal} />
+        <Preview
+          personal={this.state.personal}
+          experience={this.state.experience}
+          education={this.state.education}
+        />
       </MainWrap>
     );
   }
@@ -52,8 +91,7 @@ class Main extends React.Component {
 
 const MainWrap = styled.main`
   display: flex;
-  margin: 3rem;
-  height: 80vh;
+  margin: 3rem 6rem;
 `;
 
 export default Main;
