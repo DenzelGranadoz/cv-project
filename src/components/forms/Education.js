@@ -9,6 +9,8 @@ class Education extends React.Component {
   render() {
     return (
       <FormWrapper onSubmit={this.props.handleSubmit}>
+        <h3>Education</h3>
+
         <input
           onChange={this.props.handleChange('universityName')}
           type="text"
@@ -39,8 +41,8 @@ class Education extends React.Component {
           name="to"
           placeholder="To"
         />
-        <button type="submit">Delete</button>
-        <button type="submit">Add</button>
+        <Button type="submit">Delete</Button>
+        <Button type="submit">Add</Button>
       </FormWrapper>
     );
   }
@@ -49,6 +51,11 @@ class Education extends React.Component {
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
+`;
+
+const Button = styled.button`
+  padding: 0.5rem;
+  margin: 0.25rem 0.2rem;
 `;
 
 export default Education;

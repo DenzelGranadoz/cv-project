@@ -9,6 +9,7 @@ class Personal extends React.Component {
   render() {
     return (
       <FormWrapper onSubmit={this.props.handleSubmit}>
+        <h3>Personal Information</h3>
         <input
           onChange={this.props.handleChange('firstName')}
           type="text"
@@ -39,7 +40,7 @@ class Personal extends React.Component {
           name="emailAddress"
           placeholder="Email Address"
         />
-        <input
+        <textarea
           onChange={this.props.handleChange('description')}
           type="text"
           name="description"
