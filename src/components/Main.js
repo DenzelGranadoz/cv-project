@@ -104,6 +104,7 @@ class Main extends React.Component {
 const MainWrap = styled.main`
   display: flex;
   margin: 4.5rem 12rem;
+  height: 100%;
 `;
 
 export default Main;

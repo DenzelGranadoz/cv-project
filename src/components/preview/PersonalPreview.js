@@ -20,18 +20,18 @@ class PersonalPreview extends React.Component {
         </HeaderDiv>
         <PhotoDiv>
           <Image src={this.props.image} alt="" />
-          <p>
+          <div>
             <strong>Address:</strong>
             <p>{this.props.personal.address}</p>
-          </p>
-          <p>
+          </div>
+          <div>
             <strong>Phone Number:</strong>
             <p>{this.props.personal.phoneNumber}</p>
-          </p>
-          <p>
+          </div>
+          <div>
             <strong>Email Address:</strong>
             <p>{this.props.personal.emailAddress}</p>
-          </p>
+          </div>
         </PhotoDiv>
       </ContainerDiv>
     );
@@ -40,16 +40,14 @@ class PersonalPreview extends React.Component {
 
 const ContainerDiv = styled.div`
   height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
+  display: contents;
 `;
 
 const HeaderDiv = styled.div`
-  grid-area: header;
-  width: 100%;
   background-color: #2b7a77;
   height: 12rem;
   display: flex;
+  grid-area: header;
 `;
 
 const NameDiv = styled.div`
@@ -64,17 +62,18 @@ const DescriptionDiv = styled.div`
 `;
 
 const PhotoDiv = styled.div`
-  grid-area: personal;
-  width: 250px;
+  max-width: 250px;
   height: 100%;
   background-color: #46464670;
   padding: 1.5rem;
   word-wrap: break-word;
+  grid-area: personal;
 `;
 
 const Image = styled.img`
   height: 200px;
   width: 200px;
+  margin-bottom: 2rem;
   border-radius: 50%;
 `;
 

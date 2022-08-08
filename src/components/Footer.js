@@ -28,13 +28,12 @@ const FooterWrap = styled.footer`
 `;
 
 const A = styled.a`
-  color: #e98074;
-
+  color: #ffffff;
   text-decoration: none;
 `;
 
 const Span = styled.span`
-  color: #e98074;
+  color: #ffffff;
   padding: 0 2rem;
   font-weight: bold;
 `;
