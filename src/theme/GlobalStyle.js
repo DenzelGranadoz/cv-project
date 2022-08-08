@@ -15,46 +15,82 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: "Tahoma", sans-serif;
-    background-color: #EAE7DC;
+    font-family: "Roboto", sans-serif;
+    background-color: #3d3d3d;
+    height: 100%;
   }
 
-  img{
+  img {
     display: block
     width: 100%;
   }
 
-  input {
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  label {
     margin: 0.3rem 0.25rem;
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
-    border: none;
+    background-color: #7e7e7e;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font: inherit;
+  }
+
+  input[type="text"]::placeholder,
+  input[type="number"]::placeholder,
+  textarea::placeholder {
+    color: white;
+    opacity: 1;f
+  }
+
+  label:hover {
+    cursor: pointer;
+    background-color: #464646;
   }
 
   h3 {
     margin: 0.5rem 0.4rem;
+    color: white;
+  }
+
+  h2,h4 {
+    color: white;
+    margin: 0.5rem 0rem;
+
+  }
+
+  span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
   }
 
   button {
-    background-color: #8e8d8a70;
+    background-color: #2b7a77;
     border: none;
     border-radius: 5px;
-    color: #e85a4f;
+    color: #ffffff;
   }
 
   button:hover {
     cursor: pointer;
-    background-color: #8e8d8a;
+    background-color: #175654;
   }
 
   textarea {
     height: 75px;
     margin: 0.3rem 0.25rem;
     padding: 0.25rem 0.5rem;
-    border: none;
+    border: 2px solid #ffffff;
     border-radius: 5px;
     resize: none;
-    font-family: inherit
+    font-family: inherit;
+  }
+
+  p{ 
+    margin: 1rem 0;
   }
 `;
 

@@ -5,7 +5,7 @@ class Header extends React.Component {
   render() {
     return (
       <HeaderWrap>
-        <HeaderName>CV Application</HeaderName>
+        <HeaderName>CV Maker</HeaderName>
       </HeaderWrap>
     );
   }
@@ -14,14 +14,14 @@ class Header extends React.Component {
 const HeaderWrap = styled.header`
   width: 100%;
   text-align: center;
-  padding: 1rem 0;
-  border-bottom: 2px solid #8e8d8a;
+  padding: 2rem 0;
+  background-color: #2b7a77;
 `;
 
 const HeaderName = styled.h1`
   font-size: 2.5rem;
   margin: 0;
-  color: #e98074;
+  color: #ffffff;
 `;
 
 export default Header;

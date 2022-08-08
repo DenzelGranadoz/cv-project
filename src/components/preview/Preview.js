@@ -12,7 +12,10 @@ class Preview extends React.Component {
   render() {
     return (
       <PreviewWrapper>
-        <PersonalPreview personal={this.props.personal} />
+        <PersonalPreview
+          personal={this.props.personal}
+          image={this.props.image}
+        />
         <ExperiencePreview experience={this.props.experience} />
         <EducationPreview education={this.props.education} />
       </PreviewWrapper>
@@ -22,10 +25,15 @@ class Preview extends React.Component {
 
 const PreviewWrapper = styled.div`
   flex: 1 1 0;
-
-  width: 0;
-  border: 1px solid black;
-  margin: 0 2em;
+  background-color: white;
+  border-radius: 8px;
+  min-width: 900px;
+  margin: 0 1em;
+  grid:
+    'header header header' auto
+    'personal other other' 50px
+    'personal other other' 50px /
+    minmax(250px, auto) 1fr 1fr;
 `;
 
 export default Preview;

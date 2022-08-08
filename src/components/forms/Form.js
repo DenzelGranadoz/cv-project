@@ -15,6 +15,7 @@ class Form extends React.Component {
         <Personal
           input={this.props.inputPersonal}
           handleChange={this.props.handleChangePersonal}
+          handleChangeImage={this.props.handleChangeImage}
           handleSubmit={this.props.handleSubmit}
         />
         <Experience
@@ -38,13 +39,12 @@ class Form extends React.Component {
 }
 
 const FormWrapper = styled.div`
-  border: 4px solid #8e8d8a;
-  border-radius: 10px;
-  box-shadow: 5px 5px 3px 5px lightgray;
+  background-color: #464646;
+  border-radius: 8px;
   flex: 1 1 0;
-  width: 0;
-  margin: 0 2rem;
-  padding: 0.5rem 1rem;
+  min-width: 300px;
+  margin: 0 1em;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
 `;

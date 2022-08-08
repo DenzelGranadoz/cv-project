@@ -11,6 +11,7 @@ class Main extends React.Component {
         firstName: '',
         lastName: '',
         position: '',
+        address: '',
         phoneNumber: '',
         emailAddress: '',
         description: '',
@@ -29,8 +30,8 @@ class Main extends React.Component {
         from: '',
         to: '',
       },
+      image: null,
     };
-    this.handleChangePersonal = this.handleChangePersonal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -42,6 +43,15 @@ class Main extends React.Component {
     this.setState({
       personal: newPersonal,
     });
+  };
+
+  handleChangeImage = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      let img = e.target.files[0];
+      this.setState({
+        image: URL.createObjectURL(img),
+      });
+    }
   };
 
   handleChangeExperience = (key) => (e) => {
@@ -75,12 +85,14 @@ class Main extends React.Component {
         <Forms
           inputPersonal={this.state.personal}
           handleChangePersonal={this.handleChangePersonal}
+          handleChangeImage={this.handleChangeImage}
           handleSubmit={this.handleSubmit}
           handleChangeExperience={this.handleChangeExperience}
           handleChangeEducation={this.handleChangeEducation}
         />
         <Preview
           personal={this.state.personal}
+          image={this.state.image}
           experience={this.state.experience}
           education={this.state.education}
         />
@@ -91,7 +103,7 @@ class Main extends React.Component {
 
 const MainWrap = styled.main`
   display: flex;
-  margin: 3rem 6rem;
+  margin: 4.5rem 12rem;
 `;
 
 export default Main;

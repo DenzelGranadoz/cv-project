@@ -28,6 +28,19 @@ class Personal extends React.Component {
           name="position"
           placeholder="Position"
         />
+        <label htmlFor="myImage"> Upload Personal Photo</label>
+        <ImageInput
+          type="file"
+          name="myImage"
+          id="myImage"
+          onChange={this.props.handleChangeImage}
+        />
+        <input
+          onChange={this.props.handleChange('address')}
+          type="text"
+          name="address"
+          placeholder="Address"
+        />
         <input
           onChange={this.props.handleChange('phoneNumber')}
           type="number"
@@ -43,6 +56,7 @@ class Personal extends React.Component {
         <textarea
           onChange={this.props.handleChange('description')}
           type="text"
+          maxLength={300}
           name="description"
           placeholder="Description"
         />
@@ -54,6 +68,10 @@ class Personal extends React.Component {
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
+`;
+
+const ImageInput = styled.input`
+  display: none;
 `;
 
 export default Personal;
