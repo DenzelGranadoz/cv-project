@@ -79,6 +79,40 @@ class Main extends React.Component {
     console.log(this.state.personal);
   }
 
+  handleReset = () => {
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    document.querySelector('textarea').value = '';
+
+    this.setState({
+      personal: {
+        firstName: '',
+        lastName: '',
+        position: '',
+        address: '',
+        phoneNumber: '',
+        emailAddress: '',
+        description: '',
+      },
+      experience: {
+        position: '',
+        companyName: '',
+        cityName: '',
+        from: '',
+        to: '',
+      },
+      education: {
+        universityName: '',
+        cityName: '',
+        degree: '',
+        from: '',
+        to: '',
+      },
+      image: null,
+    });
+  };
+
   render() {
     return (
       <MainWrap>
@@ -87,6 +121,7 @@ class Main extends React.Component {
           handleChangePersonal={this.handleChangePersonal}
           handleChangeImage={this.handleChangeImage}
           handleSubmit={this.handleSubmit}
+          handleReset={this.handleReset}
           handleChangeExperience={this.handleChangeExperience}
           handleChangeEducation={this.handleChangeEducation}
         />

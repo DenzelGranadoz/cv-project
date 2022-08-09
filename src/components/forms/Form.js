@@ -29,9 +29,11 @@ class Form extends React.Component {
           handleSubmit={this.props.handleSubmit}
         />
         <>
-          <Button type="submit">Show Example</Button>
-          <Button type="submit">Export to PDF</Button>
-          <Button type="submit">Reset</Button>
+          <DarkBtn type="submit">Show Example</DarkBtn>
+          <DarkBtn type="submit">Export to PDF</DarkBtn>
+          <ResetBtn type="button" onClick={this.props.handleReset}>
+            Reset
+          </ResetBtn>
         </>
       </FormWrapper>
     );
@@ -49,9 +51,16 @@ const FormWrapper = styled.div`
   flex-direction: column;
 `;
 
-const Button = styled.button`
+const DarkBtn = styled.button`
   padding: 0.5rem;
   margin: 0.25rem 0.2rem;
+  background-color: #175654;
+`;
+
+const ResetBtn = styled.button`
+  padding: 0.5rem;
+  margin: 0.25rem 0.2rem;
+  background-color: #c55858;
 `;
 
 export default Form;
