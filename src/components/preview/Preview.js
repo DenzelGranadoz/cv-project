@@ -11,7 +11,7 @@ class Preview extends React.Component {
 
   render() {
     return (
-      <PreviewWrapper>
+      <PreviewWrapper id="divToPrint">
         <PersonalPreview
           personal={this.props.personal}
           image={this.props.image}
@@ -26,9 +26,9 @@ class Preview extends React.Component {
 const PreviewWrapper = styled.div`
   flex: 1 1 0;
   background-color: white;
-  border-radius: 8px;
   min-width: 900px;
-  width: 100%;
+  min-height: 90rem; // for the pdf height 
+  width: 820px
   margin: 0 1em;
   overflow: hidden;
   display: grid;

@@ -30,7 +30,9 @@ class Form extends React.Component {
         />
         <>
           <DarkBtn type="submit">Show Example</DarkBtn>
-          <DarkBtn type="submit">Export to PDF</DarkBtn>
+          <DarkBtn type="button" onClick={this.props.handleExport}>
+            Export to PDF
+          </DarkBtn>
           <ResetBtn type="button" onClick={this.props.handleReset}>
             Reset
           </ResetBtn>
@@ -45,6 +47,7 @@ const FormWrapper = styled.div`
   border-radius: 8px;
   flex: 1 1 0;
   min-width: 300px;
+  max-width: 990px;
   margin: 0 1em;
   padding: 1.25rem;
   display: flex;

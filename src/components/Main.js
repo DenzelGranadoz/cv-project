@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Forms from './forms/Form';
 import Preview from './preview/Preview';
+import { jsPDF } from 'jspdf';
+import * as html2canvas from 'html2canvas';
 
 class Main extends React.Component {
   constructor(props) {
@@ -113,6 +115,17 @@ class Main extends React.Component {
     });
   };
 
+  printDocument = () => {
+    const input = document.getElementById('divToPrint');
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, 'JPEG', 0, 0);
+      // pdf.output('dataurlnewwindow');
+      pdf.save('cv.pdf');
+    });
+  };
+
   render() {
     return (
       <MainWrap>
@@ -122,6 +135,7 @@ class Main extends React.Component {
           handleChangeImage={this.handleChangeImage}
           handleSubmit={this.handleSubmit}
           handleReset={this.handleReset}
+          handleExport={this.printDocument}
           handleChangeExperience={this.handleChangeExperience}
           handleChangeEducation={this.handleChangeEducation}
         />
