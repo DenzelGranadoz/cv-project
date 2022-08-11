@@ -252,7 +252,7 @@ class Main extends React.Component {
     const input = document.getElementById('divToPrint');
     html2canvas(input).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
+      const pdf = new jsPDF('portrait', 'pt', 'a2');
       pdf.addImage(imgData, 'JPEG', 0, 0);
       pdf.save('cv.pdf');
     });
