@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import PersonalPreview from './PersonalPreview';
-import ExperiencePreview from './ExperiencePreview';
-import EducationPreview from './EducationPreview';
+import PersonalSection from './PersonalSection';
+import ExperienceSection from './ExperienceSection';
+import EducationSection from './EducationSection';
 
-class Preview extends React.Component {
+class CV extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -12,12 +12,12 @@ class Preview extends React.Component {
   render() {
     return (
       <PreviewWrapper id="divToPrint">
-        <PersonalPreview
+        <PersonalSection
           personal={this.props.personal}
           image={this.props.image}
         />
-        <ExperiencePreview experience={this.props.experience} />
-        <EducationPreview education={this.props.education} />
+        <ExperienceSection experience={this.props.experience} />
+        <EducationSection education={this.props.education} />
       </PreviewWrapper>
     );
   }
@@ -26,9 +26,8 @@ class Preview extends React.Component {
 const PreviewWrapper = styled.div`
   flex: 1 1 0;
   background-color: white;
-  min-width: 900px;
-  min-height: 90rem; // for the pdf height 
-  width: 820px
+  min-width: 1000px; // for the pdf width
+  min-height: 90rem; // for the pdf height
   margin: 0 1em;
   overflow: hidden;
   display: grid;
@@ -39,4 +38,4 @@ const PreviewWrapper = styled.div`
     minmax(250px, auto) 1fr 1fr;
 `;
 
-export default Preview;
+export default CV;

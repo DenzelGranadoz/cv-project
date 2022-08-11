@@ -1,47 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
+import ExperienceItem from './ExperienceItem';
 
 class Experience extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  renderExperience = () => {
+    return this.props.experience.map((experience) => (
+      <ExperienceItem
+        key={experience.id}
+        id={experience.id}
+        experienceItem={experience}
+        handleChange={this.props.handleChange}
+        handleDelete={this.props.handleDelete}
+      />
+    ));
+  };
+
   render() {
     return (
-      <FormWrapper onSubmit={this.props.handleSubmit}>
+      <FormWrapper>
         <h3>Experience</h3>
-        <input
-          onChange={this.props.handleChange('position')}
-          type="text"
-          name="position"
-          placeholder="Position"
-        />
-        <input
-          onChange={this.props.handleChange('companyName')}
-          type="text"
-          name="companyName"
-          placeholder="Company Name"
-        />
-        <input
-          onChange={this.props.handleChange('cityName')}
-          type="text"
-          name="cityName"
-          placeholder="City Name"
-        />
-        <input
-          onChange={this.props.handleChange('from')}
-          type="text"
-          name="from"
-          placeholder="From"
-        />
-        <input
-          onChange={this.props.handleChange('to')}
-          type="text"
-          name="to"
-          placeholder="To"
-        />
-        <Button type="submit">Delete</Button>
-        <Button type="submit">Add</Button>
+        {this.renderExperience()}
+        <Button type="button" onClick={this.props.handleAdd}>
+          Add
+        </Button>
       </FormWrapper>
     );
   }

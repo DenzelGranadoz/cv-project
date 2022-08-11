@@ -29,8 +29,8 @@ const GlobalStyle = createGlobalStyle`
   input[type="number"],
   textarea,
   label {
-    margin: 0.3rem 0.25rem;
-    padding: 0.25rem 0.5rem;
+    margin: 0.4rem 0.25rem;
+    padding: 0.4rem;
     border-radius: 5px;
     background-color: #7e7e7e;
     border: 2px solid #ffffff;
@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   input[type="number"]::placeholder,
   textarea::placeholder {
     color: white;
-    opacity: 1;f
+    opacity: 1;
   }
 
   label:hover {
@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     font-weight: bold;
     color: white;
+    margin-right: 0.5rem;
   }
 
   button {
@@ -72,6 +73,7 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     border-radius: 5px;
     color: #ffffff;
+    font-size: 1rem;
   }
 
   button:hover {
@@ -80,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   textarea {
-    height: 75px;
+    height: 90px;
     margin: 0.3rem 0.25rem;
     padding: 0.25rem 0.5rem;
     border: 2px solid #ffffff;
@@ -89,7 +91,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
 
-  p{ 
+  p { 
     margin: 1rem 0;
   }
 `;

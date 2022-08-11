@@ -13,23 +13,27 @@ class Form extends React.Component {
     return (
       <FormWrapper>
         <Personal
-          input={this.props.inputPersonal}
           handleChange={this.props.handleChangePersonal}
           handleChangeImage={this.props.handleChangeImage}
-          handleSubmit={this.props.handleSubmit}
         />
         <Experience
-          input={this.props.input}
+          experience={this.props.experience}
           handleChange={this.props.handleChangeExperience}
           handleSubmit={this.props.handleSubmit}
+          handleAdd={this.props.handleAddExperience}
+          handleDelete={this.props.handleDeleteExperience}
         />
         <Education
-          input={this.props.input}
+          education={this.props.education}
           handleChange={this.props.handleChangeEducation}
           handleSubmit={this.props.handleSubmit}
+          handleAdd={this.props.handleAddEducation}
+          handleDelete={this.props.handleDeleteEducation}
         />
         <>
-          <DarkBtn type="submit">Show Example</DarkBtn>
+          <DarkBtn type="button" onClick={this.props.handleShowExample}>
+            Show Example
+          </DarkBtn>
           <DarkBtn type="button" onClick={this.props.handleExport}>
             Export to PDF
           </DarkBtn>

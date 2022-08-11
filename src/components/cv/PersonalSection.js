@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class PersonalPreview extends React.Component {
+class PersonalSection extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,8 +10,8 @@ class PersonalPreview extends React.Component {
       <ContainerDiv>
         <HeaderDiv>
           <NameDiv>
-            <span>{this.props.personal.firstName || 'First Name'}</span>
-            <span>{this.props.personal.lastName || ', Last Name'}</span>
+            <span>{this.props.personal.firstName || 'First Name, '}</span>
+            <span>{this.props.personal.lastName || 'Last Name'}</span>
             <h2>{this.props.personal.position || 'Position'}</h2>
           </NameDiv>
           <DescriptionDiv>
@@ -77,4 +77,4 @@ const Image = styled.img`
   border-radius: 50%;
 `;
 
-export default PersonalPreview;
+export default PersonalSection;

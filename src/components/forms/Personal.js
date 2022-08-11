@@ -8,7 +8,7 @@ class Personal extends React.Component {
 
   render() {
     return (
-      <FormWrapper onSubmit={this.props.handleSubmit}>
+      <FormWrapper>
         <h3>Personal Information</h3>
         <input
           onChange={this.props.handleChange('firstName')}

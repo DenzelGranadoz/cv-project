@@ -1,48 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
+import EducationItem from './EducationItem';
 
 class Education extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  renderEducation = () => {
+    return this.props.education.map((education) => (
+      <EducationItem
+        key={education.id}
+        id={education.id}
+        educationItem={education}
+        handleChange={this.props.handleChange}
+        handleDelete={this.props.handleDelete}
+      />
+    ));
+  };
+
   render() {
     return (
-      <FormWrapper onSubmit={this.props.handleSubmit}>
+      <FormWrapper>
         <h3>Education</h3>
-
-        <input
-          onChange={this.props.handleChange('universityName')}
-          type="text"
-          name="universityName"
-          placeholder="University Name"
-        />
-        <input
-          onChange={this.props.handleChange('cityName')}
-          type="text"
-          name="cityName"
-          placeholder="City Name"
-        />
-        <input
-          onChange={this.props.handleChange('degree')}
-          type="text"
-          name="degree"
-          placeholder="Degree"
-        />
-        <input
-          onChange={this.props.handleChange('from')}
-          type="text"
-          name="from"
-          placeholder="From"
-        />
-        <input
-          onChange={this.props.handleChange('to')}
-          type="text"
-          name="to"
-          placeholder="To"
-        />
-        <Button type="submit">Delete</Button>
-        <Button type="submit">Add</Button>
+        {this.renderEducation()}
+        <Button type="button" onClick={this.props.handleAdd}>
+          Add
+        </Button>
       </FormWrapper>
     );
   }
